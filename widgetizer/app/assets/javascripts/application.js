@@ -20,13 +20,13 @@ $(document).ready(function() {
 
     inputText = $(this).val()
     // $('.output').html(inputText)
+    inputText = inputText.replace("**", '<b>')
+    inputText = inputText.replace("**", '</b>')
+     $('.output').html(inputText)
 
-    if (inputText.charAt(0) === "*" && inputText.slice(-1) === "*") {
-      inputText = inputText.substring(1, inputText.length-1)
-       $('.output').html(inputText).css("font-weight", "bold")
-    }
-    // $('.output').html(inputText)
-
+    inputText = inputText.replace("*", '<i>')
+    inputText = inputText.replace("*", '</i>')
+    $('.output').html(inputText)
 
   })
 })
