@@ -1,4 +1,6 @@
 .boxy {
+  max-width:49%;
+  word-wrap: break-word;
   width:49%;
   height: 20em;
   float: left;
