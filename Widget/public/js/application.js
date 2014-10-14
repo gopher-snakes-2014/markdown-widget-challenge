@@ -5,18 +5,36 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 
-    $("#user_input").on("keyup", function(){
+    $("#source-id").on("keyup", function(){
     codeToTranslate = $(this).val();
-    $("#translation").text(translator(codeToTranslate));
+    $("#preview-div").append(translator(codeToTranslate));
     })
 
     var translator = function(codeToTranslate) {
-      if ((codeToTranslate.charAt(0) === "*") && (codeToTranslate.charAt(codeToTranslate.length - 1) === "*")) {
-        $("#translation").css("font-style", "italic")
-        return codeToTranslate.substr(1, (codeToTranslate.length-2))
-        } else {
-          return ""
-        }
+
+       if ((codeToTranslate.charAt(0) === "*") && (codeToTranslate.charAt(1) === "*") && (codeToTranslate.charAt(codeToTranslate.length-1) === "*") && (codeToTranslate.charAt(codeToTranslate.length-2) === "*")) {
+        $("#preview-div").empty();
+        return "<p><b>" + codeToTranslate.substr(2, (codeToTranslate.length-4)) + "</b></p>"
+      }
+
+       else if ((codeToTranslate.charAt(0) === "_") && (codeToTranslate.charAt(1) === "_") && (codeToTranslate.charAt(codeToTranslate.length-1) === "_") && (codeToTranslate.charAt(codeToTranslate.length-2) === "_")) {
+        $("#preview-div").empty();
+        return "<p><b>" + codeToTranslate.substr(2, (codeToTranslate.length-4)) + "</b></p>"
+      }
+
+      else if ((codeToTranslate.charAt(0) === "*") && (codeToTranslate.charAt(codeToTranslate.length - 1) === "*")) {
+        $("#preview-div").empty();
+        return "<p><em>" + codeToTranslate.substr(1, (codeToTranslate.length-2)) + "</em></p>"
+      }
+
+      else if ((codeToTranslate.charAt(0) === "_") && (codeToTranslate.charAt(codeToTranslate.length - 1) === "_")) {
+        $("#preview-div").empty();
+        return "<p><em>" + codeToTranslate.substr(1, (codeToTranslate.length-2)) + "</em></p>"
+      }
+      else {
+        $("#preview-div").empty();
+      }
+
 
       // } else if (codeToTranslate.charAt(0) === "**") (codeToTranslate.charAt(codeToTranslate.length - 1) === "**")) {{
       // //   var translatedCode = codeToTranslate.css("color", "red")
@@ -28,7 +46,7 @@ $(document).ready(function() {
     };
 
 });
-
+// .replace(/\"/g, "")
 
 //*word* = BOLD word
 
