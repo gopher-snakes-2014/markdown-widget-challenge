@@ -1,0 +1,7 @@
+.markdown {
+  height: 200px;
+  width: 300px;
+  border: 5px solid purple;
+  border-radius: 25px;
+  margin-left: 400px;
+}

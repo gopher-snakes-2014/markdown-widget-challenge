@@ -4,4 +4,13 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+
+  function bindEvents() {
+    $(".user_input").on("keyup", function(){
+    codeToTranslate = $(this).val();
+    console.log(codeToTranslate)
+    $("#translation").text(codeToTranslate);
+    })
+  }
+  bindEvents();
 });
