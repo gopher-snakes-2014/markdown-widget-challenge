@@ -15,19 +15,40 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
-  $('#tarjet').keyup(function(){
+// $(document).ready(function() {
+//   $('#tarjet').keyup(function(){
+
+//     inputText = $(this).val()
+//     // $('.output').html(inputText)
+//     inputText = inputText.replace("**", '<b>')
+//     inputText = inputText.replace("**", '</b>')
+//      $('.output').html(inputText)
+
+//     inputText = inputText.replace("*", '<i>')
+//     inputText = inputText.replace("*", '</i>')
+//     $('.output').html(inputText)
+
+//   })
+// })
+
+var MarkdownWidget = function(source, output) {
+
+  $(source).keyup(function(){
 
     inputText = $(this).val()
     // $('.output').html(inputText)
     inputText = inputText.replace("**", '<b>')
     inputText = inputText.replace("**", '</b>')
-     $('.output').html(inputText)
+     $(output).html(inputText)
 
     inputText = inputText.replace("*", '<i>')
     inputText = inputText.replace("*", '</i>')
-    $('.output').html(inputText)
+    $(output).html(inputText)
 
   })
-})
 
+};
+
+$(function() {
+  MarkdownWidget('#tarjet', '.output')
+})
