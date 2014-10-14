@@ -1,21 +1,21 @@
 var Model = {};
 Model.translateText = function(textContent){
 
-  var translationResult;
-    // regex for shit seperated by **s (\*\*[\w\s]+\*\*)
+    var textCopy = textContent.slice(0);
 
-    var boldyTHings = /(\*\*[^\*]+\*\*)/g;
-    var italicyThings = /[^\*](\*[^\*]+\*)[^\*]/g ;
+    while (textCopy.indexOf("**") > -1 ){
+      textCopy = textCopy.replace('**', '<b>')
+      textCopy = textCopy.replace('**', '</b>')
+    }
 
-    translationResult = textContent.match(boldyTHings);
+    while (textCopy.indexOf("*") > -1 ){
+      textCopy = textCopy.replace('*', '<i>')
+      textCopy = textCopy.replace('*', '</i>')
+    }
 
-    console.log(translationResult);
-
-  return translationResult
+    while (textCopy.indexOf("_") > -1 ){
+      textCopy = textCopy.replace('_', '<i>')
+      textCopy = textCopy.replace('_', '</i>')
+    }
+  return textCopy
 }
-
-
-// while ( ( match = ptrn.exec(input) ) != null )
-// {
-//     alert( match );
-// }
