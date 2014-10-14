@@ -7,12 +7,17 @@
         <title>Markdown Widget Challenge</title>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <link rel="author" href="humans.txt">
     </head>
     <body>
-        <textarea name="input_markdown" id="input_markdown" cols="30" rows="10" placeholder="Type in here..."></textarea>
+        <textarea class="input" name="input_markdown" id="input_markdown" cols="30" rows="10" placeholder="Type in here..."></textarea>
         <br>
-        <div class="output">
+        <div class="boxy input" contenteditable="true" id="input_markdown">
+          You can also type here
+        </div>
+        <div class="boxy" id="output_markdown">
             Output markdown in this div
         </div>
         <script src="js/main.js"></script>

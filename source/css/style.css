@@ -1,0 +1,7 @@
+.boxy {
+  width:49%;
+  height: 20em;
+  float: left;
+  display: inline-table;
+  border: 1px solid #ccc;
+}
