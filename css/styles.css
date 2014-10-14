@@ -1,0 +1,19 @@
+.wrapper{
+  width: 400px;
+  height: 400px;
+  /*display: inline;*/
+  border: 2px solid black;
+  float: left;
+  margin: 5px;
+  text-align: center;
+}
+textarea{
+  border: none;
+}
+
+.container, body {
+
+  height: 100%;
+  width: 100%;
+}
+
