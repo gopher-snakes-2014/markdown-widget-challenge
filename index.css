@@ -1,0 +1,15 @@
+#input {
+  float: left;
+}
+
+#output {
+  float: right;
+}
+
+#inputLabel {
+  float: left;
+}
+
+#outputLabel {
+  float: right;
+}
