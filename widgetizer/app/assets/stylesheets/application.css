@@ -14,12 +14,27 @@
  *= require_self
  */
 
+body {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+#tarjet {
+  width: 500px;
+
+
+}
 
 .output {
+  padding: 1em;
   width: 500px;
   height: 200px;
   background-color: LightGray;
   border-radius: 25px;
+  overflow: auto;
   overflow: scroll;
+  overflow-x :hidden;
 
 }
