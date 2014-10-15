@@ -9,42 +9,39 @@
           $(source).on("keyup", function(){
             codeToTranslate = $(this).val();
             view(codeToTranslate, preview)
-            console.log("I am the preview in controller " + preview)
           })
         }
       };
     };
 
     // view
-    var view = function(preview){
-      $(preview).append(translator(codeToTranslate))
-      console.log("I am the preview in the view " + preview )
+    var view = function(codeToTranslate, preview){
+      $(preview).append(translator(codeToTranslate, preview)
       };
 
     // model
     var translator = function(codeToTranslate,preview) {
-      console.log("I am the preview in the translator " + preview)
        if ((codeToTranslate.charAt(0) === "*") && (codeToTranslate.charAt(1) === "*") && (codeToTranslate.charAt(codeToTranslate.length-1) === "*") && (codeToTranslate.charAt(codeToTranslate.length-2) === "*")) {
-        // $(preview).empty();
+        $(preview).empty();
         return "<p><b>" + codeToTranslate.substr(2, (codeToTranslate.length-4)) + "</b></p>"
       }
 
        else if ((codeToTranslate.charAt(0) === "_") && (codeToTranslate.charAt(1) === "_") && (codeToTranslate.charAt(codeToTranslate.length-1) === "_") && (codeToTranslate.charAt(codeToTranslate.length-2) === "_")) {
-        // $(preview).empty();
+        $(preview).empty();
         return "<p><b>" + codeToTranslate.substr(2, (codeToTranslate.length-4)) + "</b></p>"
       }
 
       else if ((codeToTranslate.charAt(0) === "*") && (codeToTranslate.charAt(codeToTranslate.length - 1) === "*")) {
-        // $(preview).empty();
+        $(preview).empty();
         return "<p><em>" + codeToTranslate.substr(1, (codeToTranslate.length-2)) + "</em></p>"
       }
 
       else if ((codeToTranslate.charAt(0) === "_") && (codeToTranslate.charAt(codeToTranslate.length - 1) === "_")) {
-        // $(preview).empty();
+        $(preview).empty();
         return "<p><em>" + codeToTranslate.substr(1, (codeToTranslate.length-2)) + "</em></p>"
       }
       else {
-        // $(preview).empty();
+        $(preview).empty();
       }
     };
 
