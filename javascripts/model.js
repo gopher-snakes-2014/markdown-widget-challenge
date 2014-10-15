@@ -1,5 +1,5 @@
-var Model = {};
-Model.translateText = function(textContent){
+Markdizzle.Model = {};
+Markdizzle.Model.translateText = function(textContent){
 
     var textCopy = textContent.slice(0);
 

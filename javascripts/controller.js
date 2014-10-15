@@ -1,7 +1,12 @@
+Markdizzle.controlDat=function(){
+    var textContent = Markdizzle.View.getTextContent();
+    var translatedTextContent = Markdizzle.Model.translateText(textContent);
+    Markdizzle.View.display(translatedTextContent);
+}
 
-$('#text-box').keyup(function(){
-  var textContent;
-  textContent = View.getTextContent();
-  var translatedTextContent = Model.translateText(textContent);
-  View.display(translatedTextContent);
-});
+Markdizzle.inizzilize = function(){
+  $('.text-entry').keyup(function(){
+    Markdizzle.controlDat();
+  });
+};
+

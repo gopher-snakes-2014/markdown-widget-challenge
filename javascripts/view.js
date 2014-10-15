@@ -1,8 +1,8 @@
-var View = {};
-View.getTextContent = function(){
-  var textContent = $('#text-box').val();
+Markdizzle.View = {};
+Markdizzle.View.getTextContent = function(){
+  var textContent = $('.text-entry').val();
   return textContent
 };
-View.display = function(textContent){
-  $("#result-of-md").html(textContent);
+Markdizzle.View.display = function(textContent){
+  $(".md-display").html(textContent);
 };
