@@ -1,23 +1,25 @@
-$(document).ready(function() {
+// $(document).ready(function() {
 
     // controller
 
     var MarkdownWidget = function(source,preview){
       return{
-        $(source).on("keyup", function(){
-        codeToTranslate = $(this).val();
-        view(preview)
+        addListener: function(){
+          $(source).on("keyup", function(){
+            codeToTranslate = $(this).val();
+            view(preview)
+          })
         }
-      });
-    };
+      };
+    }
+
 
     // controller 
 
     // view
     var view = function(preview){
-      $(preview).append(translator(codeToTranslate));
+      $(preview).append(translator(codeToTranslate))
       };
-    });
     // view
 
 // model
@@ -47,4 +49,4 @@ $(document).ready(function() {
       }
     };
 
-});
+// });
